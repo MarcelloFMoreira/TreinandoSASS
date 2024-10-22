@@ -1,0 +1,119 @@
+
+$cor-primaria: #256bbb;
+$cor-secundaria: #8e56aa;
+$textcolor: #333;
+$font: "Arial", sans-serif;
+
+
+@mixin bordered($thickness, $style, $color) {
+  border: $thickness $style $color;
+  border-radius: 5px;
+}
+
+
+@mixin center-display-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+$sections: (
+  "about": lighten($cor-primaria, 40%),
+  "books": lighten($cor-secundaria, 40%),
+  "contact": lighten($cor-primaria, 20%)
+);
+
+
+body {
+  font-family: $font;
+  color: $textcolor;
+  margin: 0;
+  padding: 0;
+}
+
+
+.books__header {
+  display: flex;
+  justify-content: space-between;
+  background-color: $cor-primaria;
+  padding: 20px;
+  color: white;
+
+  h1 {
+    margin: 0;
+  }
+
+  .menu {
+    margin-top: 10px;
+
+    a {
+      color: white;
+      text-decoration: none;
+      margin-right: 15px;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+
+@each $section, $bg-color in $sections {
+  ##{$section} {
+    background-color: $bg-color;
+    padding: 20px;
+
+    h2 {
+      color: darken($bg-color, 15%);
+    }
+
+    p, a {
+      color: darken($bg-color, 25%);
+    }
+
+    img {
+      @include bordered(2px, solid, darken($bg-color, 25%));
+    }
+  }
+}
+
+
+.books {
+  .book-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 2rem;
+
+    .book-item {
+      background-color: white;
+      padding: 15px;
+      @include bordered(1px, solid, $cor-primaria);
+
+      &:hover {
+        background-color: lighten($cor-primaria, 40%);
+      }
+    }
+  }
+}
+
+.about{
+    @include center-display-flex;
+    flex-direction: column;
+}
+.contact {
+  @include center-display-flex;
+  flex-direction: column;
+  a {
+    color: $cor-secundaria;
+
+    &:hover {
+      color: darken($cor-secundaria, 10%);
+    }
+  }
+}
+
+#vaicorinthians{
+    width: 100px;
+}

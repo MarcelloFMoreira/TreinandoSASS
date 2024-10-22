@@ -1,0 +1,86 @@
+body {
+  font-family: "Arial", sans-serif;
+  color: #333;
+  margin: 0;
+  padding: 0; }
+
+.books__header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #256bbb;
+  padding: 20px;
+  color: white; }
+  .books__header h1 {
+    margin: 0; }
+  .books__header .menu {
+    margin-top: 10px; }
+    .books__header .menu a {
+      color: white;
+      text-decoration: none;
+      margin-right: 15px; }
+      .books__header .menu a:hover {
+        text-decoration: underline; }
+
+#about {
+  background-color: #bbd4f1;
+  padding: 20px; }
+  #about h2 {
+    color: #7bace5; }
+  #about p, #about a {
+    color: #5092dc; }
+  #about img {
+    border: 2px solid #5092dc;
+    border-radius: 5px; }
+
+#books {
+  background-color: #e9deee;
+  padding: 20px; }
+  #books h2 {
+    color: #c7abd5; }
+  #books p, #books a {
+    color: #b089c4; }
+  #books img {
+    border: 2px solid #b089c4;
+    border-radius: 5px; }
+
+#contact {
+  background-color: #659fe1;
+  padding: 20px; }
+  #contact h2 {
+    color: #2977d0; }
+  #contact p, #contact a {
+    color: #215fa6; }
+  #contact img {
+    border: 2px solid #215fa6;
+    border-radius: 5px; }
+
+.books .book-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 2rem; }
+  .books .book-list .book-item {
+    background-color: white;
+    padding: 15px;
+    border: 1px solid #256bbb;
+    border-radius: 5px; }
+    .books .book-list .book-item:hover {
+      background-color: #bbd4f1; }
+
+.about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; }
+
+.contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; }
+  .contact a {
+    color: #8e56aa; }
+    .contact a:hover {
+      color: #724588; }
+
+#vaicorinthians {
+  width: 100px; }
